@@ -1,15 +1,8 @@
 /******************************************************************************
+
 Rajkumar Radhamanalan
 
-Sample utility code for circular buffer
-*******************************************************************************/
-
-/******************************************************************************
-
-                            Online C Compiler.
-                Code, Compile, Run and Debug C program online.
-Write your code in this editor and press "Run" button to compile and execute it.
-
+Circular Sample code
 *******************************************************************************/
 
 #include <stdio.h>
@@ -17,32 +10,35 @@ Write your code in this editor and press "Run" button to compile and execute it.
 
 #define MAX 6
 typedef struct circBuff {
-    unsigned int data[MAX];
-    unsigned int write_index, read_index;
-    unsigned short size, length;
+    unsigned int data[MAX]; //biffer
+    unsigned int write_index, read_index; //maintain read, write position
+    unsigned short size, length; // having size of buffer and remaining elements to read and write
 }CircularBuffer;
 
 CircularBuffer cbuf;
 
+//Buffer initialization
 void init_buffer()
 {
     cbuf.write_index = cbuf.read_index = 0;
     cbuf.size = MAX;
     cbuf.length = 0;
 }
+
+
 int read()
 {
     int ret_data = 0;
+    //Checking buffer empty case
     if (cbuf.length == 0) {
         printf("Buffer is empty\n");
         return 0;
     }
     
     ret_data = cbuf.data[cbuf.read_index];
+    cbuf.read_index++;
     if (cbuf.read_index == cbuf.size) {
         cbuf.read_index = 0;
-    } else {
-        cbuf.read_index++;
     }
     
     cbuf.length--;
@@ -56,13 +52,10 @@ int write(int element)
         return 0;
     }
     
-    printf("data[%d]=%d, element %d\n", cbuf.write_index, cbuf.data[cbuf.write_index], element);
     cbuf.data[cbuf.write_index] = element;
-    printf("data[%d]=%d\n", cbuf.write_index, cbuf.data[cbuf.write_index]);
+    cbuf.write_index++;
     if (cbuf.write_index == cbuf.size) {
         cbuf.write_index = 0;
-    } else {
-        cbuf.write_index++;
     }
     cbuf.length++;
 
@@ -91,6 +84,7 @@ int main()
     write(22);
     print_buffer_stats();
     write(21);
+    write(24);
     print_buffer_stats();
     print_element();
     print_element();
@@ -105,6 +99,7 @@ int main()
     print_element();
     print_element();
     print_element();
+    print_buffer_stats();
     return 0;
 }
 

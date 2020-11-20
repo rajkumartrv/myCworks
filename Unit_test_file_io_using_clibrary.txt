@@ -1,0 +1,386 @@
+Unit test cases and results:
+============================
+
+1. Give text and binary inputs  and check given input written into 'input_data' file properly
+
+		rajkradh@bgl-vms-vm1054:/ws/rajkradh-bgl/norton_dev$ gcc read_stdin_write_to_file.c 
+		rajkradh@bgl-vms-vm1054:/ws/rajkradh-bgl/norton_dev$ 
+		rajkradh@bgl-vms-vm1054:/ws/rajkradh-bgl/norton_dev$ ./a.out 
+
+		 Is input image, video or music file(y/N): 
+
+		 Enter data (press ctr+d if input over):
+		Optimize the code for release                                     
+		007 123456788 010101010
+		((*&&^^%%$#@!@!@#$%^&*
+
+		 Copied file 'ip_data_copy' contents are:
+		-rw-r--r-- 1 rajkradh eng 77 Oct  1 17:23 ip_data_copy
+		Optimize the code for release
+		007 123456788 010101010
+		((*&&^^%%$#@!@!@#$%^&*
+		rajkradh@bgl-vms-vm1054:/ws/rajkradh-bgl/norton_dev$ 
+		rajkradh@bgl-vms-vm1054:/ws/rajkradh-bgl/norton_dev$ ls -l
+		total 36
+		-rw-r--r-- 1 rajkradh eng  9576 Oct  1 17:20 Unit_test_cases_and_results.txt
+		-rwxr-xr-x 1 rajkradh eng 13240 Oct  1 17:22 a.out
+		-rw-r--r-- 1 rajkradh eng    77 Oct  1 17:23 ip_data_copy
+		-rw-r--r-- 1 rajkradh eng  1735 Oct  1 17:21 read_stdin_write_to_file.c
+		rajkradh@bgl-vms-vm1054:/ws/rajkradh-bgl/norton_dev$ 
+
+
+2.1 Give image file and check input_data file size and given image file size is same or now
+		
+		rajkradh@bgl-vms-vm1054:/ws/rajkradh-bgl/norton_dev$ 
+		rajkradh@bgl-vms-vm1054:/ws/rajkradh-bgl/norton_dev$ ls -l ../cExplore/
+		total 30548
+		-rw-r--r-- 1 nfsnobody nfsnobody    26025 Jul 31 16:30 817_533_1.png
+		-rw-r--r-- 1 nfsnobody nfsnobody  4842585 Jul 14  2009 Sleep_Away.mp3
+		-rw-r--r-- 1 nfsnobody nfsnobody 26246026 Jul 14  2009 Wildlife.wmv
+		-rwxr-xr-x 1 rajkradh  eng           8800 Oct  1 13:36 a.out
+		-rw-r--r-- 1 rajkradh  eng             16 Oct  1 13:37 ip_data_copy
+		-rw-r--r-- 1 rajkradh  eng            738 Oct  1 13:36 main.c
+		-rw-r--r-- 1 rajkradh  eng           2267 Sep 29 22:31 narton_code_test.c
+		drwxr-xr-x 3 rajkradh  eng           4096 Oct  1 17:19 nortonlifelock
+		rajkradh@bgl-vms-vm1054:/ws/rajkradh-bgl/norton_dev$ 
+		rajkradh@bgl-vms-vm1054:/ws/rajkradh-bgl/norton_dev$ 
+		rajkradh@bgl-vms-vm1054:/ws/rajkradh-bgl/norton_dev$ ./a.out 
+
+		 Is input image, video or music file(y/N):y
+
+		 Enter file path (path length should not > 512):t^C
+		rajkradh@bgl-vms-vm1054:/ws/rajkradh-bgl/norton_dev$ vim read_stdin_write_to_file.c 
+		rajkradh@bgl-vms-vm1054:/ws/rajkradh-bgl/norton_dev$ gcc read_stdin_write_to_file.c 
+		rajkradh@bgl-vms-vm1054:/ws/rajkradh-bgl/norton_dev$ ./a.out 
+
+		 Is input image, video or music file(y/N):y
+
+		 Enter file path (path length should not > 512):../cExplore/817_533_1.png
+		Given file sie is 26025 and find copied file detail below 
+		-rw-r--r-- 1 nfsnobody nfsnobody 26025 Jul 31 16:30 ../cExplore/817_533_1.png
+		-rw-r--r-- 1 rajkradh  eng       26025 Oct  1 17:25 ip_data_copy
+		rajkradh@bgl-vms-vm1054:/ws/rajkradh-bgl/norton_dev$ 
+
+
+2.2 Give video file and check input_data file size and given video file size is same or now
+
+		rajkradh@bgl-vms-vm1054:/ws/rajkradh-bgl/norton_dev$ 
+		rajkradh@bgl-vms-vm1054:/ws/rajkradh-bgl/norton_dev$ ./a.out 
+
+		 Is input image, video or music file(y/N):y
+
+		 Enter file path (path length should not > 512):../cExplore/Sleep_Away.mp3
+		Given file sie is 4842585 and find copied file detail below 
+		-rw-r--r-- 1 nfsnobody nfsnobody 4842585 Jul 14  2009 ../cExplore/Sleep_Away.mp3
+		-rw-r--r-- 1 rajkradh  eng       4842585 Oct  1 17:25 ip_data_copy
+		rajkradh@bgl-vms-vm1054:/ws/rajkradh-bgl/norton_dev$ 
+		rajkradh@bgl-vms-vm1054:/ws/rajkradh-bgl/norton_dev$ 
+		rajkradh@bgl-vms-vm1054:/ws/rajkradh-bgl/norton_dev$ 
+		rajkradh@bgl-vms-vm1054:/ws/rajkradh-bgl/norton_dev$ ls -l ../cExplore/
+		total 30548
+		-rw-r--r-- 1 nfsnobody nfsnobody    26025 Jul 31 16:30 817_533_1.png
+		-rw-r--r-- 1 nfsnobody nfsnobody  4842585 Jul 14  2009 Sleep_Away.mp3
+		-rw-r--r-- 1 nfsnobody nfsnobody 26246026 Jul 14  2009 Wildlife.wmv
+		-rwxr-xr-x 1 rajkradh  eng           8800 Oct  1 13:36 a.out
+		-rw-r--r-- 1 rajkradh  eng             16 Oct  1 13:37 ip_data_copy
+		-rw-r--r-- 1 rajkradh  eng            738 Oct  1 13:36 main.c
+		-rw-r--r-- 1 rajkradh  eng           2267 Sep 29 22:31 narton_code_test.c
+		drwxr-xr-x 3 rajkradh  eng           4096 Oct  1 17:19 nortonlifelock
+		rajkradh@bgl-vms-vm1054:/ws/rajkradh-bgl/norton_dev$ 
+		rajkradh@bgl-vms-vm1054:/ws/rajkradh-bgl/norton_dev$ 
+		rajkradh@bgl-vms-vm1054:/ws/rajkradh-bgl/norton_dev$ 
+
+
+
+
+2.3 Give music file and check input_data file size and given music file size is same or now
+		
+		rajkradh@bgl-vms-vm1054:/ws/rajkradh-bgl/norton_dev$ 
+		rajkradh@bgl-vms-vm1054:/ws/rajkradh-bgl/norton_dev$ ./a.out 
+
+		 Is input image, video or music file(y/N):y
+
+		 Enter file path (path length should not > 512):../cExplore/Wildlife.wmv
+		Given file sie is 26246026 and find copied file detail below 
+		-rw-r--r-- 1 nfsnobody nfsnobody 26246026 Jul 14  2009 ../cExplore/Wildlife.wmv
+		-rw-r--r-- 1 rajkradh  eng       26246026 Oct  1 17:26 ip_data_copy
+		rajkradh@bgl-vms-vm1054:/ws/rajkradh-bgl/norton_dev$ 
+		rajkradh@bgl-vms-vm1054:/ws/rajkradh-bgl/norton_dev$ 
+		rajkradh@bgl-vms-vm1054:/ws/rajkradh-bgl/norton_dev$ 
+
+
+2.4 Give invalid file name which is not exist and check whether code detect it or will break
+		
+		rajkradh@bgl-vms-vm1054:/ws/rajkradh-bgl/norton_dev$ ./a.out 
+
+		 Is input image, video or music file(y/N):y
+
+		 Enter file path (path length should not > 512):world_map.jpeg
+
+		 ERROR: Given file 'world_map.jpeg' is not found, errno 2 
+		rajkradh@bgl-vms-vm1054:/ws/rajkradh-bgl/norton_dev$ 
+		rajkradh@bgl-vms-vm1054:/ws/rajkradh-bgl/norton_dev$ 
+		rajkradh@bgl-vms-vm1054:/ws/rajkradh-bgl/norton_dev$ ./a.out 
+
+		 Is input image, video or music file(y/N):y
+
+		 Enter file path (path length should not > 512):mossard.mp3
+
+		 ERROR: Given file 'mossard.mp3' is not found, errno 2 
+		rajkradh@bgl-vms-vm1054:/ws/rajkradh-bgl/norton_dev$ 
+		rajkradh@bgl-vms-vm1054:/ws/rajkradh-bgl/norton_dev$ 
+
+
+2.5 Check Binary file:
+=======================
+rajkradh@bgl-ads-2932:/ws/rajkradh-bgl/norton_dev$ 
+rajkradh@bgl-ads-2932:/ws/rajkradh-bgl/norton_dev$ ls -l
+total 20
+-rw-r--r-- 1 rajkradh eng 11958 Oct  9 20:13 Unit_test_cases_and_results.txt
+drwxrwxrwx 3 rajkradh eng  4096 Oct 11 16:29 cExplore
+-rw-r--r-- 1 rajkradh eng     0 Oct 11 17:10 ip_data_copy
+-rw-r--r-- 1 rajkradh eng  2264 Oct 11 17:36 read_stdin_write_to_file.c
+lrwxrwxrwx 1 rajkradh eng     8 Oct 11 17:08 test -> test.txt
+rajkradh@bgl-ads-2932:/ws/rajkradh-bgl/norton_dev$ 
+rajkradh@bgl-ads-2932:/ws/rajkradh-bgl/norton_dev$ gcc read_stdin_write_to_file.c -o norton
+rajkradh@bgl-ads-2932:/ws/rajkradh-bgl/norton_dev$ 
+rajkradh@bgl-ads-2932:/ws/rajkradh-bgl/norton_dev$ norton
+
+ Is input data binary, image, video, or music file(y/N):y
+
+ Enter file path (path length should not > 512):test
+
+ ERROR: Given input file 'test' is not found, errno 2 
+rajkradh@bgl-ads-2932:/ws/rajkradh-bgl/norton_dev$ 
+rajkradh@bgl-ads-2932:/ws/rajkradh-bgl/norton_dev$ ls -l /usr/bin/mkdir
+-rwxr-xr-x 1 root root 79864 Mar 15  2019 /usr/bin/mkdir
+rajkradh@bgl-ads-2932:/ws/rajkradh-bgl/norton_dev$ 
+rajkradh@bgl-ads-2932:/ws/rajkradh-bgl/norton_dev$ norton
+
+ Is input data binary, image, video, or music file(y/N):y
+
+ Enter file path (path length should not > 512):/usr/bin/mkdir
+Given file size is 79864 and find copied file detail below 
+-rwxr-xr-x 1 root     root 79864 Mar 15  2019 /usr/bin/mkdir
+-rw-r--r-- 1 rajkradh eng  79864 Oct 11 17:43 ip_data_copy
+rajkradh@bgl-ads-2932:/ws/rajkradh-bgl/norton_dev$ 
+rajkradh@bgl-ads-2932:/ws/rajkradh-bgl/norton_dev$ ip_data_copy
+ip_data_copy: missing operand
+Try 'ip_data_copy --help' for more information.
+rajkradh@bgl-ads-2932:/ws/rajkradh-bgl/norton_dev$ ip_data_copy --help
+Usage: ip_data_copy [OPTION]... DIRECTORY...
+Create the DIRECTORY(ies), if they do not already exist.
+
+Mandatory arguments to long options are mandatory for short options too.
+  -m, --mode=MODE   set file mode (as in chmod), not a=rwx - umask
+  -p, --parents     no error if existing, make parent directories as needed
+  -v, --verbose     print a message for each created directory
+  -Z                   set SELinux security context of each created directory
+                         to the default type
+      --context[=CTX]  like -Z, or if CTX is specified then set the SELinux
+                         or SMACK security context to CTX
+      --help     display this help and exit
+      --version  output version information and exit
+
+GNU coreutils online help: <http://www.gnu.org/software/coreutils/>
+Report ip_data_copy translation bugs to <http://translationproject.org/team/>
+For complete documentation, run: info coreutils 'ip_data_copy invocation'
+rajkradh@bgl-ads-2932:/ws/rajkradh-bgl/norton_dev$ mkdir --help
+Usage: mkdir [OPTION]... DIRECTORY...
+Create the DIRECTORY(ies), if they do not already exist.
+
+Mandatory arguments to long options are mandatory for short options too.
+  -m, --mode=MODE   set file mode (as in chmod), not a=rwx - umask
+  -p, --parents     no error if existing, make parent directories as needed
+  -v, --verbose     print a message for each created directory
+  -Z                   set SELinux security context of each created directory
+                         to the default type
+      --context[=CTX]  like -Z, or if CTX is specified then set the SELinux
+                         or SMACK security context to CTX
+      --help     display this help and exit
+      --version  output version information and exit
+
+GNU coreutils online help: <http://www.gnu.org/software/coreutils/>
+Report mkdir translation bugs to <http://translationproject.org/team/>
+For complete documentation, run: info coreutils 'mkdir invocation'
+rajkradh@bgl-ads-2932:/ws/rajkradh-bgl/norton_dev$ 
+rajkradh@bgl-ads-2932:/ws/rajkradh-bgl/norton_dev$ 
+rajkradh@bgl-ads-2932:/ws/rajkradh-bgl/norton_dev$ l s-l
+ls: cannot access s-l: No such file or directory
+rajkradh@bgl-ads-2932:/ws/rajkradh-bgl/norton_dev$ ls -l
+total 120
+-rw-r--r-- 1 rajkradh eng 11958 Oct  9 20:13 Unit_test_cases_and_results.txt
+drwxrwxrwx 3 rajkradh eng  4096 Oct 11 16:29 cExplore
+-rwxrwxrwx 1 rajkradh eng 79864 Oct 11 17:43 ip_data_copy
+-rwxr-xr-x 1 rajkradh eng 13160 Oct 11 17:41 norton
+-rw-r--r-- 1 rajkradh eng  2264 Oct 11 17:36 read_stdin_write_to_file.c
+lrwxrwxrwx 1 rajkradh eng     8 Oct 11 17:08 test -> test.txt
+rajkradh@bgl-ads-2932:/ws/rajkradh-bgl/norton_dev$ 
+rajkradh@bgl-ads-2932:/ws/rajkradh-bgl/norton_dev$ 
+rajkradh@bgl-ads-2932:/ws/rajkradh-bgl/norton_dev$ 
+
+
+2.6 Check invalid file:
+=========================
+rajkradh@bgl-ads-2932:/ws/rajkradh-bgl/norton_dev$ norton 
+
+ Is input data binary, image, video, or music file(y/N):y
+
+ Enter file path (path length should not > 512):test
+
+ ERROR: Given input file 'test' is not found, errno 2 
+fopen: No such file or directory
+rajkradh@bgl-ads-2932:/ws/rajkradh-bgl/norton_dev$ 
+rajkradh@bgl-ads-2932:/ws/rajkradh-bgl/norton_dev$ 
+
+
+
+Commit process:
+================
+	rajkradh@bgl-vms-vm1054:/ws/rajkradh-bgl/norton_dev$ git status
+	On branch master
+	Your branch is up to date with 'origin/master'.
+
+	Changes not staged for commit:
+	  (use "git add <file>..." to update what will be committed)
+	  (use "git checkout -- <file>..." to discard changes in working directory)
+
+		modified:   read_stdin_write_to_file.c
+
+	Untracked files:
+	  (use "git add <file>..." to include in what will be committed)
+
+		a.out
+		ip_data_copy
+
+	no changes added to commit (use "git add" and/or "git commit -a")
+	rajkradh@bgl-vms-vm1054:/ws/rajkradh-bgl/norton_dev$ git add read_stdin_write_to_file.c
+	rajkradh@bgl-vms-vm1054:/ws/rajkradh-bgl/norton_dev$ 
+	rajkradh@bgl-vms-vm1054:/ws/rajkradh-bgl/norton_dev$ git status
+	On branch master
+	Your branch is up to date with 'origin/master'.
+
+	Changes to be committed:
+	  (use "git reset HEAD <file>..." to unstage)
+
+		modified:   read_stdin_write_to_file.c
+
+	rajkradh@bgl-vms-vm1054:/ws/rajkradh-bgl/norton_dev$ 
+	rajkradh@bgl-vms-vm1054:/ws/rajkradh-bgl/norton_dev$ git commit
+	[master 2e2d1d9] BugID: 20201001-Optimze code for release
+	 1 file changed, 36 insertions(+), 61 deletions(-)
+	rajkradh@bgl-vms-vm1054:/ws/rajkradh-bgl/norton_dev$ 
+	rajkradh@bgl-vms-vm1054:/ws/rajkradh-bgl/norton_dev$ 
+	rajkradh@bgl-vms-vm1054:/ws/rajkradh-bgl/norton_dev$ git push -u origin refs/heads/master
+	Username for 'https://github.com': rajkumargandhi@live.com
+	Password for 'https://rajkumargandhi@live.com@github.com': 
+	Enumerating objects: 5, done.
+	Counting objects: 100% (5/5), done.
+	Delta compression using up to 8 threads
+	Compressing objects: 100% (3/3), done.
+	Writing objects: 100% (3/3), 771 bytes | 154.00 KiB/s, done.
+	Total 3 (delta 2), reused 0 (delta 0)
+	remote: Resolving deltas: 100% (2/2), completed with 2 local objects.
+	To https://github.com/rajkumartrv/nortonlifelock.git
+	   87f43dc..2e2d1d9  master -> master
+	Branch 'master' set up to track remote branch 'master' from 'origin'.
+	rajkradh@bgl-vms-vm1054:/ws/rajkradh-bgl/norton_dev$ 
+	rajkradh@bgl-vms-vm1054:/ws/rajkradh-bgl/norton_dev$ 
+	rajkradh@bgl-vms-vm1054:/ws/rajkradh-bgl/norton_dev$ 
+
+
+
+
+
+
+Unit test on 2020/10/06:
+========================
+bgl-ads-2932:/ws/rajkradh-bgl/norton_dev > 
+bgl-ads-2932:/ws/rajkradh-bgl/norton_dev > ls -l
+total 30584
+-rw-r--r-- 1 rajkradh eng    26025 Oct  6 22:27 817_533_1.png
+-rw-r--r-- 1 rajkradh eng  4842585 Oct  6 22:27 Sleep_Away.mp3
+-rw-r--r-- 1 rajkradh eng     8124 Oct  1 18:07 Unit_test_cases_and_results.txt
+-rw-r--r-- 1 rajkradh eng 26246026 Oct  6 22:27 Wildlife.wmv
+-rwxr-xr-x 1 rajkradh eng    13160 Oct  6 22:32 a.out
+-rw-r--r-- 1 rajkradh eng    26025 Oct  6 22:32 ip_data_copy
+-rw-r--r-- 1 rajkradh eng     1839 Oct  6 22:40 read_stdin_write_to_file.c
+bgl-ads-2932:/ws/rajkradh-bgl/norton_dev > 
+bgl-ads-2932:/ws/rajkradh-bgl/norton_dev > gcc read_stdin_write_to_file.c 
+bgl-ads-2932:/ws/rajkradh-bgl/norton_dev > 
+bgl-ads-2932:/ws/rajkradh-bgl/norton_dev > 
+bgl-ads-2932:/ws/rajkradh-bgl/norton_dev > ./a.out 
+
+ Is input image, video or music file(y/N):y
+
+ Enter file path (path length should not > 512):817_533_1.png
+Given file size is 26025 and find copied file detail below 
+-rw-r--r-- 1 rajkradh eng 26025 Oct  6 22:27 817_533_1.png
+-rw-r--r-- 1 rajkradh eng 26025 Oct  6 22:56 ip_data_copy
+bgl-ads-2932:/ws/rajkradh-bgl/norton_dev > 
+bgl-ads-2932:/ws/rajkradh-bgl/norton_dev > 
+bgl-ads-2932:/ws/rajkradh-bgl/norton_dev > y
+bash: y: command not found
+bgl-ads-2932:/ws/rajkradh-bgl/norton_dev > ./a.out 
+
+ Is input image, video or music file(y/N):y
+
+ Enter file path (path length should not > 512):Sleep_Away.mp3
+Given file size is 4842585 and find copied file detail below 
+-rw-r--r-- 1 rajkradh eng 4842585 Oct  6 22:27 Sleep_Away.mp3
+-rw-r--r-- 1 rajkradh eng 4842585 Oct  6 22:57 ip_data_copy
+bgl-ads-2932:/ws/rajkradh-bgl/norton_dev > 
+bgl-ads-2932:/ws/rajkradh-bgl/norton_dev > 
+bgl-ads-2932:/ws/rajkradh-bgl/norton_dev > ./a.out 
+
+ Is input image, video or music file(y/N):y
+
+ Enter file path (path length should not > 512):Wildlife.wmv
+Given file size is 26246026 and find copied file detail below 
+-rw-r--r-- 1 rajkradh eng 26246026 Oct  6 22:27 Wildlife.wmv
+-rw-r--r-- 1 rajkradh eng 26246026 Oct  6 22:57 ip_data_copy
+bgl-ads-2932:/ws/rajkradh-bgl/norton_dev > 
+bgl-ads-2932:/ws/rajkradh-bgl/norton_dev > 
+bgl-ads-2932:/ws/rajkradh-bgl/norton_dev > 
+bgl-ads-2932:/ws/rajkradh-bgl/norton_dev > ./a.out 
+
+ Is input image, video or music file(y/N):
+
+ Enter data (press ctr+d if input over):
+Release code to millon system                
+100000 deployment and 12324565768    
+)((**&^%%$#@
+
+ Copied file 'ip_data_copy' contents are:
+-rw-r--r-- 1 rajkradh eng 77 Oct  6 22:58 ip_data_copy
+Release code to millon system
+100000 deployment and 12324565768
+)((**&^%%$#@
+bgl-ads-2932:/ws/rajkradh-bgl/norton_dev > 
+bgl-ads-2932:/ws/rajkradh-bgl/norton_dev > 
+bgl-ads-2932:/ws/rajkradh-bgl/norton_dev > ls -l
+total 30556
+-rw-r--r-- 1 rajkradh eng    26025 Oct  6 22:27 817_533_1.png
+-rw-r--r-- 1 rajkradh eng  4842585 Oct  6 22:27 Sleep_Away.mp3
+-rw-r--r-- 1 rajkradh eng     8124 Oct  1 18:07 Unit_test_cases_and_results.txt
+-rw-r--r-- 1 rajkradh eng 26246026 Oct  6 22:27 Wildlife.wmv
+-rwxr-xr-x 1 rajkradh eng    13160 Oct  6 22:56 a.out
+-rw-r--r-- 1 rajkradh eng       77 Oct  6 22:58 ip_data_copy
+-rw-r--r-- 1 rajkradh eng     1839 Oct  6 22:40 read_stdin_write_to_file.c
+bgl-ads-2932:/ws/rajkradh-bgl/norton_dev > 
+bgl-ads-2932:/ws/rajkradh-bgl/norton_dev > cat ip_data_copy 
+Release code to millon system
+100000 deployment and 12324565768
+)((**&^%%$#@
+bgl-ads-2932:/ws/rajkradh-bgl/norton_dev > 
+bgl-ads-2932:/ws/rajkradh-bgl/norton_dev > 
+
+bgl-ads-2932:/ws/rajkradh-bgl/norton_dev > ./a.out 
+
+ Is input image, video or music file(y/N):y
+
+  Enter file path (path length should not > 512):baby-image.png
+
+   ERROR: Given file 'baby-image.png' is not found, errno 2 
+   bgl-ads-2932:/ws/rajkradh-bgl/norton_dev > 
+   bgl-ads-2932:/ws/rajkradh-bgl/norton_dev > 
